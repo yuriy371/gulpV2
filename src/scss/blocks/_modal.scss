@@ -1,0 +1,143 @@
+.modal {
+	&__overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: rgba(0, 143, 223, 0.39);
+		z-index: 100;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.2s;
+		&--visible {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&__dialog {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 478px;
+		max-height: 96%;
+		overflow-y: auto;
+		overflow-x: hidden;
+		transform: translate(-50%, -50%);
+		padding: 33px 88px 33px 88px;
+		background: #000000;
+		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 101;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.2s;
+		&--visible {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 17px;
+		right: 17px;
+		width: 26px;
+		height: 26px;
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			width: 26px;
+			height: 2px;
+			background: #ffffff;
+		}
+		&::after {
+			top: 50%;
+			transform: rotate(-45deg);
+		}
+		&::before {
+			top: 50%;
+			transform: rotate(45deg);
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 18px;
+		text-transform: uppercase;
+		color: #ffffff;
+		margin: 0 0 15px 0px;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		color: #ffffff;
+	}
+
+	&__input {
+		min-width: 300px;
+		height: 50px;
+		margin: 15px 0 0px 0;
+	}
+
+	&__message {
+		height: 123px;
+		resize: none;
+		margin: 15px 0 0px 0;
+	}
+
+	&__wrapper-btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: 15px 0 0px 0;
+	}
+
+	&__button {
+		min-width: 160px;
+		height: 50px;
+		padding: 0 10px;
+		font-weight: bold;
+		font-size: 16px;
+		color: #ffffff;
+	}
+
+	&__info {
+		margin: 10px 0 0 0;
+		font-weight: bold;
+		font-size: 12px;
+		color: #ffffff;
+	}
+
+	&__input,
+	&__message {
+		padding: 18px 23px;
+		border-radius: 4px;
+	}
+}
+.input {
+	font-size: 12px;
+}
+.up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: #18A5C6;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px 50px 10px 10px;
+    cursor: pointer;
+	z-index: 50;
+    &.view {
+        display: flex;
+    }
+}
